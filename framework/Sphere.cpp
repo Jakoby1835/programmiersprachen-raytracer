@@ -10,5 +10,5 @@ double Sphere::area() const {
 }
 
 double Sphere::volume() const {
-	return std::abs((8.0 / 3.0) * std::acos(0) * radius_ * radius_ * radius_)s;
+	return std::abs((8.0 / 3.0) * std::acos(0) * radius_ * radius_ * radius_);
 }
