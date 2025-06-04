@@ -10,4 +10,5 @@ public:
 	Box(glm::vec3 min, glm::vec3 max);
 	double area() const override;
 	double volume() const override;
+
 };
