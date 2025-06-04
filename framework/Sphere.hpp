@@ -7,6 +7,7 @@ private:
 	glm::vec3 center_;
 	double radius_;
 public:
+	Sphere(glm::vec3 c, double r);
 	double area() const override;
 	double volume() const override;
 };
