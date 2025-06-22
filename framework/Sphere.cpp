@@ -4,14 +4,14 @@
 #include <cmath>
 
 Sphere::Sphere(glm::vec3 c, double r) : Shape{}, center_{ c }, radius_{ r } {
-	
+    std::cout << "Sphere Konstruktor\n";
 }
 Sphere::Sphere(glm::vec3 c, double r, Color co, std::string name) : Shape{co,name}, center_{ c }, radius_{ r } {
-
+    std::cout << "Sphere Konstruktor\n";
 }
 
 std::ostream& Sphere::print(std::ostream& os) const {
-	os << "Box(center=(" << center_.x << ", " << center_.y << ", " << center_.z << "), radius=" << radius_
+	os << "Sphere(center=(" << center_.x << ", " << center_.y << ", " << center_.z << "), radius=" << radius_
 		<< ", color=" << color_ << ", name=\"" << name_ << "\")";
 	return os;
 }

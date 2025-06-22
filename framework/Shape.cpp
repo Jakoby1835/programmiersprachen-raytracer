@@ -1,7 +1,7 @@
 #include "Shape.hpp"
 
 Shape::Shape() {
-
+	std::cout << "Shape Konstruktor\n";
 }
 
 Shape::Shape(Color colors, std::string names) {
@@ -14,6 +14,6 @@ std::ostream& operator<<(std::ostream& os, const Shape& shape) {
 }
 
 Shape::~Shape() {
-
+	std::cout << "Shape Destruktor\n";
 }
 

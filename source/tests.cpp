@@ -185,6 +185,39 @@ Die Typ-Überprüfung erfolgt zu unterschiedlichen Zeitpunkten:
 
 Diese Struktur ermöglicht es, Objekte polymorph zu behandeln, während die Typsicherheit durch die Compile-Time-Überprüfung gewährleistet bleibt.*/
 
+TEST_CASE("5.8", "[TEST_PROGRAMM]") {
+    std::cout << "\n\n";
+    Color red{ 255, 0, 0 };
+    glm::vec3 position{ 0.0f, 0.0f, 0.0f };
+    Sphere* s1 = new Sphere{ position, 1.2f, red, "sphere0" };
+    Shape* s2 = new Sphere{ position, 1.2f, red, "sphere1" };
+    s1->print(std::cout);
+    s2->print(std::cout);
+    delete s1;
+    delete s2;
+}
+/*    Konstruktorenaufrufe:
+        Zuerst wird der Shape-Konstruktor aufgerufen (Base-Klasse)
+        Dann wird der Sphere-Konstruktor aufgerufen (Derived-Klasse)
+        Dieser Prozess wiederholt sich für beide Sphären
+    Print-Ausgabe:
+        Die Ausgabe zeigt die korrekten Eigenschaften beider Sphären
+        Position: (0, 0, 0)
+        Radius: 1.2
+        Farbe: (255,0,0) = Rot
+        Namen: "sphere0" und "sphere1"
+    Destruktorenaufrufe:
+        Die Shape-Destruktoren werden aufgerufen
+        Dies ist korrekt, da die virtuelle Destruktor-Methode implementiert wurde
+        Die Sphere-Destruktoren werden automatisch vor den Shape-Destruktoren aufgerufen
+
+Die Ausgabe bestätigt, dass:
+
+    Die Vererbungshierarchie korrekt funktioniert
+    Die Konstruktoren in der richtigen Reihenfolge aufgerufen werden
+    Die Destruktoren korrekt durch den virtuellen Destruktor der Shape-Klasse aufgerufen werden
+    Alle Eigenschaften der Sphären korrekt gespeichert und ausgegeben werden*/
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
