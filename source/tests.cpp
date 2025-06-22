@@ -150,6 +150,41 @@ TEST_CASE("intersect_ray_sphere", "[intersect]")
     REQUIRE(distance == Approx(4.0f));
 }
 
+/*Die Typbeziehungen in diesem Beispiel können wie folgt erklärt werden :
+
+Statischer Typ :
+Wird zur Compile - Zeit festgelegt
+Ist der deklarierte Typ der Variablen
+Kann nicht geändert werden
+Dynamischer Typ :
+Ist der tatsächliche Typ des Objekts
+Wird zur Laufzeit bestimmt
+Kann sich von dem statischen Typ unterscheiden
+
+Für die Variablen s1 und s2 gilt:
+
+    s1:
+        Statischer Typ: std::shared_ptr<Sphere>
+        Dynamischer Typ: Sphere
+        Die Typen stimmen überein
+    s2:
+        Statischer Typ: std::shared_ptr<Shape>
+        Dynamischer Typ: Sphere
+        Nutzt Polymorphismus durch Vererbung
+
+Die Typ-Überprüfung erfolgt zu unterschiedlichen Zeitpunkten:
+
+    Compile-Time:
+        Überprüfung der statischen Typen
+        Kontrolle der Pointer-Operationen
+        Validierung der Vererbungsbeziehungen
+    Runtime:
+        Bestimmung der dynamischen Typen
+        Auflösung virtueller Funktionsaufrufe
+        Typ-Überprüfung bei dynamischer Typbestimmung
+
+Diese Struktur ermöglicht es, Objekte polymorph zu behandeln, während die Typsicherheit durch die Compile-Time-Überprüfung gewährleistet bleibt.*/
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
