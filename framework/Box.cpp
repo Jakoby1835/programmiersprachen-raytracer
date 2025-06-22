@@ -4,8 +4,8 @@ Box::Box(glm::vec3 c, glm::vec3 d) : Shape{}, min_{c}, max_{d} {
 
 }
 
-Box::Box(glm::vec3 c, glm::vec3 d,Color c, std::string name) : Shape{c,name}, min_{ c }, max_{ d } {
-
+Box::Box(glm::vec3 center, glm::vec3 d, Color co, std::string name)
+	: Shape{ co, name }, min_{ center }, max_{ d } {
 }
 
 double Box::area() const {
