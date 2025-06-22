@@ -9,6 +9,7 @@ private:
 public:
 	Sphere(glm::vec3 c, double r);
 	Sphere(glm::vec3 c, double r, Color co, std::string name);
+	std::ostream& print(std::ostream& os) const override;
 	double area() const override;
 	double volume() const override;
 };

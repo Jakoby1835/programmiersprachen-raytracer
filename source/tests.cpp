@@ -97,6 +97,22 @@ TEST_CASE("BOX VOLUME", "[box][volume]")
     }
 }
 
+TEST_CASE("PrintShapes", "[Shape][Box][Sphere]") {
+    SECTION("Box") {
+        Box box1(glm::vec3(-1, -1, -1), glm::vec3(1, 1, 1));
+        Box box2(glm::vec3(-1000, -1000, -1000), glm::vec3(1000, 1000, 1000), Color{ 1,1,1 }, std::string{ "Manfred" });
+        std::cout << box1 << std::endl;
+        std::cout << box2 << std::endl;
+    }
+    SECTION("Sphere") {
+        Sphere sphere1(glm::vec3(0, 0, 0), 1000.0);
+        Sphere sphere2(glm::vec3(0, 0, 0), 5.0, Color{ 1,0.5,1 }, std::string{ "Helga" });
+        std::cout << sphere1 << std::endl;
+        std::cout << sphere2 << std::endl;
+    }
+
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

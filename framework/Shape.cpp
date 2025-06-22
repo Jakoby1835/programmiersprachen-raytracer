@@ -9,6 +9,10 @@ Shape::Shape(Color colors, std::string names) {
 	name_ = names;
 }
 
+std::ostream& operator<<(std::ostream& os, const Shape& shape) {
+	return shape.print(os);
+}
+
 Shape::~Shape() {
 
 }

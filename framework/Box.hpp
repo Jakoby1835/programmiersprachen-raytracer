@@ -9,6 +9,7 @@ private:
 public:
 	Box(glm::vec3 min, glm::vec3 max);
 	Box(glm::vec3 min, glm::vec3 d, Color co, std::string name);
+	std::ostream& print(std::ostream& os) const override;
 	double area() const override;
 	double volume() const override;
 

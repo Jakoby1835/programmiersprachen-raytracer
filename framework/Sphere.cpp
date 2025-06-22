@@ -8,6 +8,12 @@ Sphere::Sphere(glm::vec3 c, double r, Color co, std::string name) : Shape{co,nam
 
 }
 
+std::ostream& Sphere::print(std::ostream& os) const {
+	os << "Box(center=(" << center_.x << ", " << center_.y << ", " << center_.z << "), radius=" << radius_
+		<< ", color=" << color_ << ", name=\"" << name_ << "\")";
+	return os;
+}
+
 double Sphere::area() const {
 	return std::abs(8*std::acos(0)*radius_*radius_);
 }
